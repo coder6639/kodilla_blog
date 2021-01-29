@@ -25,30 +25,23 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="col-5"></div>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <form class="form-online" action="/search" method="get">
-          <div class="row justify-content-end">
-            <div class="col">
-              <input class="form-control mr-sm-2" type="text" value="{% if search_query %} {{ search_query }}{% endif %}"
-                placeholder="Search" aria-label="Search" name="q">
-            </div>
-            <div class="col">
-              <button class="btn btn-light" type="submit">Search</button>
-            </div>
-          </div>
-        </form>
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">About me
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="navbar-brand" href="{{ url_for('create_entry') }}">New post</a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand" href="{{ url_for('list_drafts') }}">Drafts</a>
+          </li>
+        </ul>
+      </div>
+          {% if session.logged_in %}
+          <form class="form-inline my-2 my-lg-0" action="{{ url_for('logout') }}" method="post">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Logout</button>
+          </form>
+          {% else %}
+            <a href="{{ url_for('login') }}" class="btn btn-secondary my-2 my-lg-0">Login</a>
+          {% endif %}
         </div>
       </div>
     </div>
