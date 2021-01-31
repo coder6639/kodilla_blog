@@ -9,8 +9,7 @@ Mako==1.1.4
 MarkupSafe==1.1.1
 python-dateutil==2.8.1
 python-editor==1.0.4
-six @ file:///tmp/build/80754af9/six_1605205327372/work
-SQLAlchemy @ file:///tmp/build/80754af9/sqlalchemy_1603397987316/work
+SQLAlchemy 
 Werkzeug==1.0.1
 WTForms==2.3.3
 
