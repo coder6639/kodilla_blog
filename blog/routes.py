@@ -1,9 +1,9 @@
-from blog import app, db
 from flask import render_template, request, session, flash, redirect, url_for
 from blog.models import Entry
 from blog.models import create_or_edit
 from blog.forms import LoginForm
 import functools
+from blog import app, db
 
 
 def login_required(view_func):
