@@ -11,3 +11,7 @@ migrate = Migrate(app, db)
 
 
 from blog import routes
+
+
+def get_app():
+    return app
